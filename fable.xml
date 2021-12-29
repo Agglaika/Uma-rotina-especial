@@ -1,6 +1,272 @@
 <fable>
-	<page>
   
+  <page background="parede1.png">
+    
+    <agent text="As coisas mais especiais que eu ganhei foi meus irmãos e hoje vou contar como é um dia da nossa rotina com eles." x="20" y="370" font-size="16" width="300" />
+      
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.jpg" x="200" y="285" width="40" height="40" on-touch="_NEXT_PAGE" />
+    
+    <agent img="berco1.1.jpg" x="10" y="0" width="200" height="250" />
+    <agent img="berco1.2.jpg" x="210" y="0" width="200" height="250" />
+    <agent img="tv.png" x="350" y="330" width="150" height="150" on-touch="door-open"/>
+    
+  </page> 
+  <page background="parede1.png">
+    
+    <agent text="Eles são acordados às 9:00 da manhã, mas eles não gostam! " x="20" y="450" font-size="16" width="300" />
+    <agent text="Para meu irmão acorda é preciso ligar a TV" x="20" y="400" font-size="16" width="300" />
+    <agent text="Para minha irmã acordar é preciso chamá-la" x="20" y="350" font-size="16" width="300" />
+    	
+        
+		<agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="chamar-irma" >
+      <chamar-irma img="seta2.jpg" on-touch="_NEXT_PAGE" />
+    </agent>
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="tv-ligada" >
+      <tv-ligada x="-400" />
+    </agent>
+    
+    <agent img="berco1.1.jpg" x="10" y="0" width="200" height="250" />
+    <agent img="berco1.2.jpg" x="210" y="0" width="200" height="250" />
+     
+    <agent img="tv2.png" x="350" y="330" width="150" height="150" />
+    <agent img="tv.png" x="350" y="330" width="150" height="150" on-touch="tv-ligada">
+    	<tv-ligada img="berco2.1.jpg" x="10" y="0" width="200" height="250" />
+    </agent>
+    <agent img="Irma.png" x="150" y="210" width="100" height="40" on-touch="chamar-irma">
+    	<chamar-irma img="berco2.2.jpg" x="210" y="0" width="200" height="250" />
+    </agent>
     
   </page>
+  <page background="parede1.png">
+  	   
+    <agent text="Agora é só trocar as fraldas, passar repelente e esperar o leite ficar pronto" x="20" y="370" font-size="16" width="300" />
+      
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.jpg" x="200" y="285" width="40" height="40" on-touch="_NEXT_PAGE" />
+    
+    <agent img="berco2.1.jpg" x="10" y="0" width="200" height="250" />
+    <agent img="berco2.2.jpg" x="210" y="0" width="200" height="250" />
+    <agent img="tv2.png" x="350" y="330" width="150" height="150" />
+    
+  </page>
+  
+  <page background="parede2.png">
+  	   
+    <agent text="Ao meio-dia eles tomam banho e até nisso são diferentes, acredita? " x="20" y="450" font-size="16" width="300" />
+    <agent text="Minha irmã gosta de banhos quentinhos." x="20" y="400" font-size="16" width="300" />
+    <agent text="Meu irmão gosta de espalhar água por toda parte." x="20" y="350" font-size="16" width="300" />
+     
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="na-banheira1" >
+      <na-banheira1 img="seta2.jpg" on-touch="_NEXT_PAGE" />
+    </agent>
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="na-banheira2" >
+      <na-banheira2 x="-400" />
+    </agent>
+    
+    <agent img="banheira1.1.png" x="10" y="20" width="200" height="180" />
+    <agent img="banheira1.2.png" x="210" y="20" width="200" height="180" />
+    
+    <agent img="banheira1.1.png" x="10" y="20" width="200" height="180" drop-zone="na-banheira1">
+    	<na-banheira1 img="agua.jpg" x="30" y="150" width="50" height="50" />
+    </agent>
+    <agent img="branco.png" x="160" y="130" width="50" height="50" on-trigger="na-banheira1">
+    	<na-banheira1 img="agua2.jpg" />
+    </agent>
+    <agent img="banheira1.2.png" x="210" y="20" width="200" height="180" drop-zone="na-banheira2">
+    	<na-banheira2 img="feliz.jpg" x="350" y="150" width="85" height="80" />
+    </agent>
+    
+    <agent img="1ploco.png" x="80" y="260" width="40" height="40" />
+    <agent img="1carro.jpg" x="30" y="200" width="65" height="45" />
+    <agent img="1torre.png" x="280" y="190" width="60" height="65" />
+    <agent img="1ursinho.png" x="270" y="260" width="30" height="55" />    
+    
+    <agent img="vapor.png" x="350" y="150" width="40" height="50" on-trigger="na-banheira2">
+    	<na-banheira2  x="-100" />
+    </agent>
+    <agent img="bola-azul.png" x="100" y="180" width="80" height="80" draggable="true" 
+    on-drop="na-banheira1" />
+    <agent img="bola-rosa.png" x="200" y="180" width="80" height="80" draggable="true" 
+    on-drop="na-banheira2" />
+    
+  </page>
+  <page background="parede2.png">
+    <agent text="Agora limpos e cheirosinhos é hora da frutinha." x="20" y="450" font-size="16" width="300" />
+    <agent text="Meu irmão gosta de banana." x="20" y="420" font-size="16" width="300" />
+    <agent text="Minha irmã gosta de Pêra." x="20" y="380" font-size="16" width="300" />
+    <agent text="Mas eles só comem vendo TV!" x="20" y="340" font-size="16" width="300" />
+    
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="tv-ligada" >
+      <tv-ligada img="seta2.jpg" on-touch="_NEXT_PAGE" />
+    </agent>
+    
+    <agent img="tv.png" x="350" y="330" width="150" height="150" on-touch="tv-ligada">
+    	<tv-ligada img="tv2.png" />
+    </agent>  
+    
+    <agent img="cadeira1.1.jpg" x="10" y="0" width="170" height="250" on-trigger="tv-ligada">
+    <tv-ligada img="cadeira1.2.jpg" />
+    </agent> 
+    <agent img="cadeira2.1.jpg" x="180" y="0" width="170" height="250" on-trigger="tv-ligada">
+    <tv-ligada img="cadeira2.2.jpg" />
+    </agent> 
+    
+  </page>
+  <page background="parede2.png">
+    
+    <agent text="Mais meia hora depois das frutinhas é hora da soneca!!!" x="20" y="380" font-size="16" width="260" />
+    
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.jpg" x="200" y="285" width="40" height="40" on-touch="_NEXT_PAGE" />
+    
+    <agent img="tv2.png" x="350" y="330" width="150" height="150" /> 
+    
+    <agent img="cadeira1.3.jpg" x="10" y="0" width="170" height="250" on-trigger="door-open" />
+    <agent img="cadeira2.3.jpg" x="180" y="0" width="170" height="250" on-trigger="door-open" />
+    
+  </page>  
+  
+  <page background="parede2.png">
+  	   
+    <agent text="Meus irmãos acordam por volta das 3:30 da tarde." x="20" y="400" font-size="16" width="290" />
+    <agent text="E estas são as horas mais divertidas do dia porque é a hora de brincarmos com eles." x="20" y="340" font-size="16" width="290" />
+    
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.jpg" x="200" y="285" width="40" height="40" on-touch="_NEXT_PAGE" />
+    
+    <agent img="bola-azul.png" x="100" y="190" width="80" height="80" />
+    <agent img="bola-rosa.png" x="200" y="100" width="80" height="80" />
+    <agent img="panelinhas.jpg" x="360" y="60" width="65" height="60" />
+    <agent img="carro.png" x="170" y="195" width="40" height="40" />
+    <agent img="tv2.png" x="350" y="330" width="150" height="150" />
+    
+    <agent img="brinquedos-em-caixa2.jpg" x="10" y="10" width="100" height="130" />
+    <agent img="bola.jpg" x="110" y="6" width="45" height="45" />
+    <agent img="lego.jpg" x="160" y="10" width="30" height="30" />
+    
+    <agent img="1ploco.png" x="300" y="30" width="40" height="40" />
+    <agent img="1carro.jpg" x="30" y="150" width="65" height="45" />
+    <agent img="1boneca.jpg" x="280" y="100" width="50" height="65" />
+    <agent img="1ursinho.png" x="270" y="260" width="30" height="55" />
+    
+  </page>
+  <page background="parede2.png">
+    <agent text="Minha irmã gosta de montar coisas." x="20" y="420" font-size="16" width="285" />
+    <agent text="Meu irmão gosta de bolas." x="20" y="400" font-size="16" width="300" />
+       
+    <agent img="tv2.png" x="350" y="330" width="150" height="150" />
+    <agent img="bola-azul.png" x="100" y="190" width="80" height="80" on-trigger="as-horas">
+      <as-horas x="-300" />
+    </agent>
+    <agent img="bola-rosa.png" x="200" y="100" width="80" height="80" on-trigger="as-horas">
+      <as-horas x="-300" />
+    </agent>
+    <agent img="bola-azul.png" x="100" y="190" width="80" height="80" drop-zone="no-azul" on-trigger="as-horas">
+    	<no-azul img="gol.jpg" x="310" y="280" width="190" height="190" />
+      <as-horas x="-300" />
+    </agent>
+    <agent img="bola-rosa.png" x="200" y="100" width="80" height="80" drop-zone="na-rosa" on-trigger="as-horas">
+    	<na-rosa img="feliz.jpg" x="265" y="175" width="105" height="100" />
+      <as-horas x="-300" />
+    </agent>
+    
+    <agent img="1ploco.png" x="300" y="30" width="40" height="40" draggable="true"/>
+    <agent img="1carro.jpg" x="30" y="150" width="65" height="45" draggable="true"/>
+    <agent img="1boneca.jpg" x="280" y="100" width="50" height="65" draggable="true"/>
+    <agent img="1ursinho.png" x="270" y="260" width="30" height="55" draggable="true"/>
+    <agent img="carro.png" x="170" y="195" width="40" height="40" draggable="true"/>
+    <agent img="panelinhas.jpg" x="360" y="60" width="65" height="60" draggable="true"/>
+    
+    <agent img="brinquedos-em-caixa2.jpg" x="10" y="10" width="100" height="130" />
+    <agent img="bola.jpg" x="110" y="6" width="45" height="45" draggable="true" 
+    on-drop="no-azul" />
+    <agent img="lego.jpg" x="160" y="10" width="30" height="30" draggable="true" 
+    on-drop="na-rosa" />
+    
+    <agent text="As horas se passam!" x="20" y="350" font-size="16" width="300" />
+    <agent img="branco.png" x="0" y="0" width="2" height="2" on-trigger="as-horas" >
+       <as-horas img="branco.png" x="10" y="330" width="250" height="300" /> 
+    </agent>
+    <agent img="h4.jpg" x="200" y="330" width="50" height="55" on-touch="as-horas" >
+      <as-horas img="as10.2.png" x="180" y="50" width="300" height="300" />
+    </agent>
+    <agent text="." x="0" y="0" on-trigger="as-horas" >
+       <as-horas text="Nem vimos as horas passarem, mas aconteceu tanta coisa que estou até sem fôlego." x="20" y="370" font-size="16" width="280" /> 
+    </agent>
+    <agent img="branco.png" x="10" y="330" width="250" height="55" on-trigger="no-azul" >
+      <no-azul x="-300" />
+    </agent>
+        <agent img="branco.png" x="10" y="330" width="250" height="55" on-trigger="na-rosa" >
+      <na-rosa x="-400" />
+    </agent>
+
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="as-horas" >
+      <as-horas img="seta2.jpg" on-touch="_NEXT_PAGE" />
+    </agent>
+        
+  </page>
+  <page background="parede1.png">
+    
+    <agent text="Mas agora eles já tomaram banho para dormir e estão preparados para tomar mingau." x="20" y="430" font-size="16" width="300" />
+    <agent text="Meu irmão vai logo dormir." x="20" y="400" font-size="16" width="300" /> 
+    <agent text="Minha irmã vai lutar contra o sono!" x="20" y="370" font-size="16" width="300" />
+  
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="n-zzz" >
+      <n-zzz img="seta2.jpg" on-touch="_NEXT_PAGE" />
+    </agent>
+    <agent img="seta2.2.jpg" x="200" y="285" width="40" height="40" on-trigger="zzz" >
+      <zzz x="-400" />
+    </agent>
+    
+    <agent img="berco1.1.jpg" x="10" y="-140" width="200" height="250" />
+    <agent img="berco1.2.jpg" x="210" y="-140" width="200" height="250" />
+    <agent img="tv.png" x="350" y="330" width="150" height="150" />
+    
+    
+    <agent img="cadeira.balanco1.png" x="10" y="100" width="140" height="170" />
+    <agent img="cadeira.balanco2.png" x="170" y="100" width="140" height="170" />
+    <agent img="cadeira.balanco1.png" x="10" y="100" width="140" height="170" drop-zone="zzz" >
+      <zzz img="zzz.jpg" x="105" y="210" width="55" height="55" />
+    </agent>
+    <agent img="cadeira.balanco2.png" x="170" y="100" width="140" height="170" drop-zone="n-zzz" >
+      <n-zzz img="n-zzz.jpg" x="159" y="210" width="55" height="55" />
+    </agent>
+    <agent img="leite1.jpg" x="400" y="295" width="20" height="40" draggable="true" on-drop="n-zzz" on-trigger="n-zzz" >
+      <n-zzz x="-600" />
+    </agent>
+    <agent img="leite2.jpg" x="370" y="295" width="20" height="40" draggable="true" on-drop="zzz" on-trigger="zzz" >
+      <zzz x="-600" />
+    </agent>
+     
+  </page>
+  
+  <page background="parede1.png">
+    
+    <agent text="Mas no meio da noite escutamos um ..." x="20" y="370" font-size="16" width="300" />
+    <agent text="FIM" x="450" y="10" font-size="16"  />
+    
+    <agent img="seta1.jpg" x="40" y="285" width="40" height="40"  on-touch="_PREV_PAGE" />
+    
+    <agent img="berco1.1.jpg" x="10" y="0" width="200" height="250" />
+    <agent img="berco2.2.jpg" x="210" y="0" width="200" height="250" />
+    <agent img="tv.png" x="350" y="330" width="150" height="150" />
+    <agent img="choro.jpg" x="170" y="160" width="60" height="40" />
+    <agent img="bua.jpg" x="150" y="200" width="150" height="150" />
+      
+  </page>
+  
 </fable>
+
+
+
+
+
+
+
+
